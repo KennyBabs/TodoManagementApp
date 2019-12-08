@@ -13,17 +13,21 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String todoName;
+    private String userName;
 
     @Size(min = 10, message = "Enter at least 10 Characters...")
     private String description;
 
     private Date targetDate;
 
-    public Todo(String todoName, String description, Date targetDate) {
-        this.todoName = todoName;
+    public Todo(String user, String description, Date targetDate) {
+        this.userName = user;
         this.description = description;
         this.targetDate = targetDate;
+    }
+
+    public Todo() {
+
     }
 
     public long getId() {
@@ -35,11 +39,11 @@ public class Todo {
     }
 
     public String getTodoName() {
-        return todoName;
+        return userName;
     }
 
-    public void setTodoName(String todoName) {
-        this.todoName = todoName;
+    public void setUserName(String user) {
+        this.userName = user;
     }
 
     public String getDescription() {
